@@ -8,27 +8,19 @@
 import SwiftUI
 
 struct CurrencyListView: View {
-    let coins: [CoinCellViewModel]
-
-    static let backgroundGradient = LinearGradient(
-        gradient: Gradient(colors: [
-            Color.currencyListTopGradient,
-            Color.currencyListBottomGradient
-        ]),
-        startPoint: .top,
-        endPoint: .bottom
-    )
+    @StateObject var viewModel = CurrencyListViewModel()
 
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVStack(spacing: 16) {
-                    ForEach(coins, id: \.symbol) { coin in
+                    ForEach(viewModel.coins, id: \.symbol) { coin in
                         CoinCellView(viewModel: coin)
                     }
                 }
             }
-            .padding(16)
+            .padding([.leading, .trailing], 16)
+            .padding([.top], 8)
             .navigationTitle("COINS")
             .navigationBarTitleDisplayMode(.automatic)
             .background(Values.backgroundGradient)
@@ -50,12 +42,5 @@ extension CurrencyListView {
 }
 
 #Preview {
-    CurrencyListView(coins: [.init(name: "Bitcoin",
-                                   symbol:  "BTC",
-                                   price: "$28.62K", icon: "bitcoinsign.circle.fill", priceChange: "-2.30%",
-                                   isPriceIncreasing: false),
-                             .init(name: "Etherum",
-                                   symbol:  "ETH",
-                                   price: "$28.62K", icon: "bitcoinsign.circle.fill", priceChange: "+2.30%",
-                                   isPriceIncreasing: true)])
+    CurrencyListView(viewModel: CurrencyListViewModel())
 }

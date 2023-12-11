@@ -16,6 +16,10 @@
 		D3CB9FBE2B266E30007E5615 /* CurrencyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FBD2B266E30007E5615 /* CurrencyCellView.swift */; };
 		D3CB9FC22B26731B007E5615 /* CoinCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FC12B26731B007E5615 /* CoinCellViewModel.swift */; };
 		D3CB9FC42B271AA5007E5615 /* CurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FC32B271AA5007E5615 /* CurrencyListView.swift */; };
+		D3CB9FCA2B272C97007E5615 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FC92B272C97007E5615 /* CoinModel.swift */; };
+		D3CB9FCC2B272DBF007E5615 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FCB2B272DBF007E5615 /* NetworkService.swift */; };
+		D3CB9FD02B272E74007E5615 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FCF2B272E74007E5615 /* CurrencyListViewModel.swift */; };
+		D3CB9FD32B272FC8007E5615 /* String+Abbrevations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FD22B272FC8007E5615 /* String+Abbrevations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		D3CB9FBD2B266E30007E5615 /* CurrencyCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCellView.swift; sourceTree = "<group>"; };
 		D3CB9FC12B26731B007E5615 /* CoinCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCellViewModel.swift; sourceTree = "<group>"; };
 		D3CB9FC32B271AA5007E5615 /* CurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListView.swift; sourceTree = "<group>"; };
+		D3CB9FC92B272C97007E5615 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		D3CB9FCB2B272DBF007E5615 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D3CB9FCF2B272E74007E5615 /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
+		D3CB9FD22B272FC8007E5615 /* String+Abbrevations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Abbrevations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,9 @@
 		D3CB9F8A2B266B29007E5615 /* TechnicalAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				D3CB9FD42B2737BF007E5615 /* Services */,
+				D3CB9FD12B272FB3007E5615 /* Extensions */,
+				D3CB9FC82B272C33007E5615 /* Models */,
 				D3CB9FC62B27253B007E5615 /* ViewModels */,
 				D3CB9FC52B27252C007E5615 /* Views */,
 				D3CB9F8B2B266B29007E5615 /* TechnicalAssessmentApp.swift */,
@@ -145,8 +156,33 @@
 			isa = PBXGroup;
 			children = (
 				D3CB9FC12B26731B007E5615 /* CoinCellViewModel.swift */,
+				D3CB9FCF2B272E74007E5615 /* CurrencyListViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D3CB9FC82B272C33007E5615 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3CB9FC92B272C97007E5615 /* CoinModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D3CB9FD12B272FB3007E5615 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D3CB9FD22B272FC8007E5615 /* String+Abbrevations.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D3CB9FD42B2737BF007E5615 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D3CB9FCB2B272DBF007E5615 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,9 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CB9FD32B272FC8007E5615 /* String+Abbrevations.swift in Sources */,
+				D3CB9FCA2B272C97007E5615 /* CoinModel.swift in Sources */,
+				D3CB9FD02B272E74007E5615 /* CurrencyListViewModel.swift in Sources */,
 				D3CB9FC42B271AA5007E5615 /* CurrencyListView.swift in Sources */,
 				D3CB9FC22B26731B007E5615 /* CoinCellViewModel.swift in Sources */,
 				D3CB9F8C2B266B29007E5615 /* TechnicalAssessmentApp.swift in Sources */,
+				D3CB9FCC2B272DBF007E5615 /* NetworkService.swift in Sources */,
 				D3CB9FBE2B266E30007E5615 /* CurrencyCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

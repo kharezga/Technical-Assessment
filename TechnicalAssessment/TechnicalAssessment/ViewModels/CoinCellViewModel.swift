@@ -8,10 +8,27 @@
 import Foundation
 
 struct CoinCellViewModel {
+    private let rawPrice: String
+    private let rawPriceChange: String
     let name: String
     let symbol: String
-    let price: String
-    let icon: String
-    let priceChange: String
+    let iconURL: String
     let isPriceIncreasing: Bool
+
+    var price: String {
+        rawPrice.formatedAsCurrencyAbbreviation()
+    }
+
+    var priceChange: String {
+        String(format: "%.2f", rawPriceChange) + "%"
+    }
+
+    init(coin: Coin) {
+        self.name = coin.name
+        self.symbol = coin.symbol
+        self.rawPrice = coin.priceUsd
+        self.iconURL = "https://coinicons-api.vercel.app/api/icon/\(coin.symbol.lowercased())"
+        self.rawPriceChange = coin.changePercent24Hr
+        self.isPriceIncreasing = coin.changePercent24Hr.first != "-"
+    }
 }

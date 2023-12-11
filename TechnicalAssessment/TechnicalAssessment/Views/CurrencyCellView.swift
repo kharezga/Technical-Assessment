@@ -21,11 +21,14 @@ struct CoinCellView: View {
     }
 
     private var coinIcon: some View {
-        Image(systemName: viewModel.icon)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 56, height: 56)
-            .foregroundColor(.orange)
+        AsyncImage(url: URL(string: viewModel.iconURL)) { image in
+            image.resizable()
+        } placeholder: {
+            ProgressView()
+        }
+        .scaledToFit()
+        .frame(width: 56, height: 56)
+        .foregroundColor(.orange)
     }
 
     private var coinInfo: some View {
@@ -68,8 +71,12 @@ struct CoinCellView: View {
 }
 
 #Preview {
-    CoinCellView(viewModel: .init(name: "Bitcoin",
-                                  symbol:  "BTC",
-                                  price: "$28.62K", icon: "bitcoinsign.circle.fill", priceChange: "-2.30%",
-                                  isPriceIncreasing: false))
+    let coinModel = Coin(id: "1",
+                         rank: "1",
+                         symbol: "BTC",
+                         name: "Bitcoin",
+                         supply: "0",
+                         priceUsd: "1234.5678",
+                         changePercent24Hr: "-0.432")
+    return CoinCellView(viewModel: .init(coin: coinModel))
 }
