@@ -10,15 +10,13 @@ import SwiftUI
 @MainActor
 class CurrencyListViewModel: ObservableObject {
     @Published var coins: [CoinCellViewModel] = []
+    @Published var isLoading = false
+
     private let networkService = NetworkService()
 
-    init() {
-        Task {
-            await fetchCoins()
-        }
-    }
-
-    func fetchCoins() async {
+    func fetchTopTenCoins() async {
+        isLoading = true
+        defer { isLoading = false }
         do {
             let coinData = try await networkService.fetchCoins()
             self.coins = coinData.map(CoinCellViewModel.init)

@@ -20,7 +20,7 @@ struct CoinCellViewModel {
     }
 
     var priceChange: String {
-        String(format: "%.2f", rawPriceChange) + "%"
+        return rawPriceChange.roundedToTwoDecimalPlaces() + "%"
     }
 
     init(coin: Coin) {
