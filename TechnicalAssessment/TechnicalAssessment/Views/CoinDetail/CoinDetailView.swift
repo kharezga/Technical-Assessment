@@ -83,6 +83,7 @@ extension CoinDetailView {
         )
     }
 }
+
 #Preview {
     CoinDetailView(viewModel: .init(coinId: "bitcoin", name: "Bitcoin", iconURL:  URL(string: "https://coinicons-api.vercel.app/api/icon/bitcoin")))
 }

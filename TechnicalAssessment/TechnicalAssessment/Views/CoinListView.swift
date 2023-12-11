@@ -15,6 +15,8 @@ struct CoinListView: View {
             Group {
                 if viewModel.isLoading {
                     ProgressView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .edgesIgnoringSafeArea(.all)
                 } else {
                     coinListView
                 }
