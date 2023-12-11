@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-class CurrencyListViewModel: ObservableObject {
+class CoinListViewModel: ObservableObject {
     @Published var coins: [CoinCellViewModel] = []
     @Published var isLoading = false
 

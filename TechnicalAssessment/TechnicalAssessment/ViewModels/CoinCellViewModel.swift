@@ -7,28 +7,20 @@
 
 import Foundation
 
-struct CoinCellViewModel {
-    private let rawPrice: String
-    private let rawPriceChange: String
-    let name: String
-    let symbol: String
-    let iconURL: String
-    let isPriceIncreasing: Bool
+class CoinCellViewModel: ObservableObject {
+    @Published private var coin: Coin
 
-    var price: String {
-        rawPrice.formatedAsCurrencyAbbreviation()
-    }
+    var name: String { coin.name }
+    var symbol: String { coin.symbol }
+    var price: String { coin.priceUsd.formatedAsCurrencyAbbreviation() }
+    var priceChange: String { coin.changePercent24Hr.roundedToTwoDecimalPlaces() + "%" }
+    var isPriceIncreasing: Bool { coin.changePercent24Hr.first != "-" }
 
-    var priceChange: String {
-        return rawPriceChange.roundedToTwoDecimalPlaces() + "%"
-    }
+    lazy var iconURL: URL? = {
+        URL(string: "https://coinicons-api.vercel.app/api/icon/\(coin.symbol.lowercased())") // Coin Cap API does not provie icons
+    }()
 
     init(coin: Coin) {
-        self.name = coin.name
-        self.symbol = coin.symbol
-        self.rawPrice = coin.priceUsd
-        self.iconURL = "https://coinicons-api.vercel.app/api/icon/\(coin.symbol.lowercased())"
-        self.rawPriceChange = coin.changePercent24Hr
-        self.isPriceIncreasing = coin.changePercent24Hr.first != "-"
+        self.coin = coin
     }
 }

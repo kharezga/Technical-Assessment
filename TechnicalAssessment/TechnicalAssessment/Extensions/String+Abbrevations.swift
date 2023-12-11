@@ -15,12 +15,12 @@ extension String {
 
     func formatedAsCurrencyAbbreviation() -> String {
         guard let value = Double(self) else { return self }
-        return value.formatAsCurrencyAbbreviation()
+        return value.formattedAsCurrencyAbbreviation()
     }
 }
 
-extension Double {
-    func formatAsCurrencyAbbreviation() -> String {
+ private extension Double {
+    func formattedAsCurrencyAbbreviation() -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.maximumFractionDigits = 2
@@ -28,18 +28,28 @@ extension Double {
         numberFormatter.groupingSeparator = ""
         numberFormatter.decimalSeparator = "."
 
-        let num = abs(self)
+        let absValue = abs(self)
+        let multiplier: Double
+        let suffix: String
+
+        switch absValue {
+        case 1_000_000_000...:
+            multiplier = 1_000_000_000
+            suffix = "B"
+        case 1_000_000...:
+            multiplier = 1_000_000
+            suffix = "M"
+        case 1_000...:
+            multiplier = 1_000
+            suffix = "K"
+        default:
+            multiplier = 1
+            suffix = ""
+        }
+
+        let formattedValue = numberFormatter.string(from: NSNumber(value: absValue / multiplier))!
         let sign = (self < 0) ? "-" : ""
 
-        switch num {
-        case 1_000_000_000...:
-            return sign + "$" + numberFormatter.string(from: NSNumber(value: self / 1_000_000_000))! + "B"
-        case 1_000_000...:
-            return sign + "$" + numberFormatter.string(from: NSNumber(value: self / 1_000_000))! + "M"
-        case 1_000...:
-            return sign + "$" + numberFormatter.string(from: NSNumber(value: self / 1_000))! + "K"
-        default:
-            return sign + "$" + numberFormatter.string(from: NSNumber(value: self))!
-        }
+        return sign + "$" + formattedValue + suffix
     }
 }

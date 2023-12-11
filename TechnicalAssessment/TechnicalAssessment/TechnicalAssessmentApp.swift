@@ -11,7 +11,7 @@ import SwiftUI
 struct TechnicalAssessmentApp: App {
     var body: some Scene {
         WindowGroup {
-            CurrencyListView()
+            CoinListView()
         }
     }
 }

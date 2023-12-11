@@ -8,7 +8,7 @@
 import Foundation
 
 enum NetworkError: Error {
-    case badURL, badResponse, errorDecodingData
+    case badURL, badResponse(statusCode: Int), errorDecodingData(error: Error)
 }
 
 class NetworkService {
@@ -17,15 +17,25 @@ class NetworkService {
             throw NetworkError.badURL
         }
 
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw NetworkError.badResponse
-        }
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw NetworkError.badResponse(statusCode: -1)
+            }
 
-        guard let decodedResponse = try? JSONDecoder().decode(CoinApiResponse.self, from: data) else {
-            throw NetworkError.errorDecodingData
+            guard httpResponse.statusCode == 200 else {
+                throw NetworkError.badResponse(statusCode: httpResponse.statusCode)
+            }
+
+            do {
+                let decodedResponse = try JSONDecoder().decode(CoinApiResponse.self, from: data)
+                return decodedResponse.data
+            } catch {
+                throw NetworkError.errorDecodingData(error: error)
+            }
+        } catch {
+            throw error
         }
-        return decodedResponse.data
     }
 }

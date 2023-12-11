@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CurrencyListView: View {
-    @ObservedObject var viewModel = CurrencyListViewModel()
+struct CoinListView: View {
+    @ObservedObject var viewModel = CoinListViewModel()
 
     var body: some View {
         NavigationView {
@@ -44,7 +44,7 @@ struct CurrencyListView: View {
     }
 }
 
-extension CurrencyListView {
+extension CoinListView {
     private enum Values {
         static let backgroundGradient = LinearGradient(
             gradient: Gradient(colors: [
@@ -58,5 +58,5 @@ extension CurrencyListView {
 }
 
 #Preview {
-    CurrencyListView(viewModel: CurrencyListViewModel())
+    CoinListView(viewModel: CoinListViewModel())
 }
