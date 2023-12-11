@@ -12,6 +12,8 @@ class CoinDetailViewModel: ObservableObject {
     @Published var isLoading = false
     
     private let coinId: String
+    private var networkService: NetworkServiceProtocol
+
     var capacity: String = ""
     var name: String
     var volume: String = ""
@@ -20,6 +22,13 @@ class CoinDetailViewModel: ObservableObject {
     var priceChange: String = ""
     var isPriceIncreasing: Bool = false
     var iconURL: URL?
+    
+    init(coinId: String, name: String, iconURL: URL?, networkService: NetworkServiceProtocol = NetworkService.shared) {
+        self.coinId = coinId
+        self.name = name
+        self.iconURL = iconURL
+        self.networkService = networkService
+    }
     
     func fetchCoin() async {
         isLoading = true
@@ -39,9 +48,4 @@ class CoinDetailViewModel: ObservableObject {
         }
     }
     
-    init (coinId: String, name: String, iconURL: URL?) {
-        self.coinId = coinId
-        self.name = name
-        self.iconURL = iconURL
-    }
 }

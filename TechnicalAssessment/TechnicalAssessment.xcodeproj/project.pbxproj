@@ -10,7 +10,6 @@
 		D3CB9F8C2B266B29007E5615 /* TechnicalAssessmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9F8B2B266B29007E5615 /* TechnicalAssessmentApp.swift */; };
 		D3CB9F902B266B2A007E5615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3CB9F8F2B266B2A007E5615 /* Assets.xcassets */; };
 		D3CB9F932B266B2A007E5615 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3CB9F922B266B2A007E5615 /* Preview Assets.xcassets */; };
-		D3CB9F9D2B266B2A007E5615 /* TechnicalAssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9F9C2B266B2A007E5615 /* TechnicalAssessmentTests.swift */; };
 		D3CB9FA72B266B2A007E5615 /* TechnicalAssessmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FA62B266B2A007E5615 /* TechnicalAssessmentUITests.swift */; };
 		D3CB9FA92B266B2A007E5615 /* TechnicalAssessmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FA82B266B2A007E5615 /* TechnicalAssessmentUITestsLaunchTests.swift */; };
 		D3CB9FBE2B266E30007E5615 /* CoinCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB9FBD2B266E30007E5615 /* CoinCellView.swift */; };
@@ -43,6 +42,10 @@
 		D3CBA0032B275311007E5615 /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBA0022B275311007E5615 /* CoinDetailView.swift */; };
 		D3CBA0052B275EBF007E5615 /* CoinDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBA0042B275EBF007E5615 /* CoinDetailViewModel.swift */; };
 		D3CBA0072B276980007E5615 /* CoinDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBA0062B276980007E5615 /* CoinDetailRow.swift */; };
+		D3CBA00C2B27716B007E5615 /* String+AbbrevationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBA00B2B27716B007E5615 /* String+AbbrevationsTests.swift */; };
+		D3CBA00E2B2771BF007E5615 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBA00D2B2771BF007E5615 /* NetworkServiceMock.swift */; };
+		D3CBA0102B27721F007E5615 /* CoinListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBA00F2B27721F007E5615 /* CoinListViewModelTests.swift */; };
+		D3CBA0122B2773A3007E5615 /* CoinDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBA0112B2773A3007E5615 /* CoinDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +71,6 @@
 		D3CB9F8F2B266B2A007E5615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3CB9F922B266B2A007E5615 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3CB9F982B266B2A007E5615 /* TechnicalAssessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechnicalAssessmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3CB9F9C2B266B2A007E5615 /* TechnicalAssessmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalAssessmentTests.swift; sourceTree = "<group>"; };
 		D3CB9FA22B266B2A007E5615 /* TechnicalAssessmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechnicalAssessmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3CB9FA62B266B2A007E5615 /* TechnicalAssessmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalAssessmentUITests.swift; sourceTree = "<group>"; };
 		D3CB9FA82B266B2A007E5615 /* TechnicalAssessmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalAssessmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -103,6 +105,10 @@
 		D3CBA0022B275311007E5615 /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
 		D3CBA0042B275EBF007E5615 /* CoinDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailViewModel.swift; sourceTree = "<group>"; };
 		D3CBA0062B276980007E5615 /* CoinDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailRow.swift; sourceTree = "<group>"; };
+		D3CBA00B2B27716B007E5615 /* String+AbbrevationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+AbbrevationsTests.swift"; sourceTree = "<group>"; };
+		D3CBA00D2B2771BF007E5615 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
+		D3CBA00F2B27721F007E5615 /* CoinListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModelTests.swift; sourceTree = "<group>"; };
+		D3CBA0112B2773A3007E5615 /* CoinDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +184,10 @@
 		D3CB9F9B2B266B2A007E5615 /* TechnicalAssessmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				D3CB9F9C2B266B2A007E5615 /* TechnicalAssessmentTests.swift */,
+				D3CBA00B2B27716B007E5615 /* String+AbbrevationsTests.swift */,
+				D3CBA00D2B2771BF007E5615 /* NetworkServiceMock.swift */,
+				D3CBA00F2B27721F007E5615 /* CoinListViewModelTests.swift */,
+				D3CBA0112B2773A3007E5615 /* CoinDetailViewModelTests.swift */,
 			);
 			path = TechnicalAssessmentTests;
 			sourceTree = "<group>";
@@ -448,7 +457,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3CB9F9D2B266B2A007E5615 /* TechnicalAssessmentTests.swift in Sources */,
+				D3CBA0122B2773A3007E5615 /* CoinDetailViewModelTests.swift in Sources */,
+				D3CBA00E2B2771BF007E5615 /* NetworkServiceMock.swift in Sources */,
+				D3CBA0102B27721F007E5615 /* CoinListViewModelTests.swift in Sources */,
+				D3CBA00C2B27716B007E5615 /* String+AbbrevationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
