@@ -12,13 +12,11 @@ class CoinListViewModel: ObservableObject {
     @Published var coins: [CoinCellViewModel] = []
     @Published var isLoading = false
 
-    private let networkService = NetworkService()
-
-    func fetchTopTenCoins() async {
+    func fetchCoins() async {
         isLoading = true
         defer { isLoading = false }
         do {
-            let coinData = try await networkService.fetchCoins()
+            let coinData = try await NetworkService.shared.fetchCoins()
             self.coins = coinData.map(CoinCellViewModel.init)
         } catch {
             print("Error fetching coins: \(error)")

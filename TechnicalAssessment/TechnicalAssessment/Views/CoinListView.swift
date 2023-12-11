@@ -24,7 +24,7 @@ struct CoinListView: View {
             .background(Values.backgroundGradient)
             .onAppear {
                 Task {
-                    await viewModel.fetchTopTenCoins()
+                    await viewModel.fetchCoins()
                 }
             }
         }
