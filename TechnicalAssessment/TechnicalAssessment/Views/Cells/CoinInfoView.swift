@@ -13,25 +13,29 @@ struct CoinInfoView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack {
-                Text(viewModel.name).font(.headline)
+                Text(viewModel.name)
+                    .font(.custom("Poppins-SemiBold", size: 20))
+                    .foregroundColor(.text)
                 Spacer()
-                Text(viewModel.price).font(.headline)
+                Text(viewModel.price)
+                    .font(.custom("Poppins-Bold", size: 16))
+                    .foregroundColor(.text)
             }
 
             HStack {
                 Text(viewModel.symbol)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .font(.custom("Poppins-Regular", size: 16))
+                    .foregroundColor(.text)
                 Spacer()
                 Text(viewModel.priceChange)
-                    .font(.subheadline)
-                    .foregroundColor(viewModel.isPriceIncreasing ? .green : .red)
+                    .font(.custom("Poppins-Bold", size: 16))
+                    .foregroundColor(viewModel.isPriceIncreasing ? .changeIncrease : .changeDecrease)
             }
 
             HStack {
                 Spacer()
                 Image(systemName: "arrow.right")
-                    .foregroundColor(.black)
+                    .foregroundColor(.text)
                     .frame(width: 24, height: 24)
             }
         }
