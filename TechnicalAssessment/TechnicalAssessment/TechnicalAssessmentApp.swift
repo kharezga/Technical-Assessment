@@ -11,7 +11,12 @@ import SwiftUI
 struct TechnicalAssessmentApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CurrencyListView(coins: [.init(name: "Bitcoin",
+                                           symbol:  "BTC",
+                                           price: "$28.62K",
+                                           icon: "bitcoinsign.circle.fill",
+                                           priceChange: "-2.30%",
+                                           isPriceIncreasing: false)])
         }
     }
 }
