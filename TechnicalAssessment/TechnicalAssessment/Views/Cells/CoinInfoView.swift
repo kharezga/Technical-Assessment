@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoinInfoView: View {
-    @ObservedObject var viewModel: CoinCellViewModel
+    let viewModel: CoinCellViewModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -48,7 +48,9 @@ struct CoinInfoView: View {
                          rank: "1",
                          symbol: "BTC",
                          name: "Bitcoin",
-                         supply: "0",
+                         supply: "1234.5678",
+                         marketCapUsd: "20231.123",
+                         volumeUsd24Hr: "1234.5678",
                          priceUsd: "1234.5678",
                          changePercent24Hr: "-0.432")
     return CoinInfoView(viewModel: .init(coin: coinModel))

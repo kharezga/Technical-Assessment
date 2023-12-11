@@ -15,6 +15,8 @@ struct CoinListView: View {
             Group {
                 if viewModel.isLoading {
                     ProgressView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .edgesIgnoringSafeArea(.all)
                 } else {
                     coinListView
                 }
@@ -24,7 +26,7 @@ struct CoinListView: View {
             .background(Values.backgroundGradient)
             .onAppear {
                 Task {
-                    await viewModel.fetchTopTenCoins()
+                    await viewModel.fetchCoins()
                 }
             }
         }
